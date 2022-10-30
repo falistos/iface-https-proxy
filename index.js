@@ -50,7 +50,7 @@ const httpsServer = https.createServer(
             console.log(chalk.bgRed(" "), "[", req.socket.remoteAddress, "=>", interface.address ,"]", "Error : ", err);
         }
     }).listen(config.port, config.bind, () => {
-        console.log("Server running at http://${config.hostname}:${config.port}/");
+        console.log(`Server running at http://${config.hostname}:${config.port}/`);
     });
 
 function sessionRequest(options) {
