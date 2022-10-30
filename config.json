@@ -1,0 +1,9 @@
+{
+    "bind": "0.0.0.0",
+    "hostname": "sessionserver.falistos.me",
+    "port": 3000,
+    "keyFile": "/etc/letsencrypt/live/sessionserver.falistos.me/privkey.pem",
+    "certFile": "/etc/letsencrypt/live/sessionserver.falistos.me/fullchain.pem",
+    "upstreamServer": "sessionserver.mojang.com",
+    "interfaces": ["51.83.66.139", "87.98.161.167"]
+}
