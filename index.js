@@ -47,7 +47,7 @@ const httpsServer = https.createServer(
             res.statusCode = err.statusCode != null ? err.statusCode : 400;
             res.end();
 
-            console.log(chalk.bgRed(" "), "[", req.socket.remoteAddress, "=>", interface.address ,"]", "Error : ", err);
+            console.log(chalk.bgRed(" "), "[", req.socket.remoteAddress, "=>", interface.address ,"]", "Error :", err);
         }
     }).listen(config.port, config.bind, () => {
         console.log(`Server running at http://${config.hostname}:${config.port}/`);
@@ -57,7 +57,7 @@ function sessionRequest(options) {
     return new Promise(function (resolve, reject) {
         var req = https.get(options, (res) => {
             if (res.statusCode != 200) {
-                reject("Upstream API returned HTTP code", res.statusCode);
+                reject("Upstream API returned HTTP code "+res.statusCode);
             }
 
             var body;
