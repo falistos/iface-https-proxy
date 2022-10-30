@@ -14,7 +14,7 @@ for (let val of config.interfaces) {
 }
 console.log("Configured interfaces: ", interfaces)
 
-const hSttpserver = https.createServer(
+const httpsServer = https.createServer(
     { key: fs.readFileSync(config.keyFile), cert: fs.readFileSync(config.certFile) },
     async function (req, res) {
         if (req.headers.host != config.hostname+":"+config.port) {
